@@ -14,6 +14,7 @@ dataset = pd.read_csv('Data.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
                 
+'''
 # replace missing data with mean
 from sklearn.preprocessing import Imputer
 # missing_values: search for all NaN, strategy: mean,
@@ -33,6 +34,7 @@ onehotencoder = OneHotEncoder(categorical_features=[0])
 x = onehotencoder.fit_transform(x).toarray()
 labelencoder_y = LabelEncoder()
 y = labelencoder_y.fit_transform(y)
+'''
 
 # split dataset into training set and test set
 #from sklearn.cross_validation import train_test_split
@@ -40,9 +42,10 @@ from sklearn.model_selection import train_test_split
 # 20% goes into test set
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
-
+'''
 # feature scaling
 from sklearn.preprocessing import StandardScaler
 sc_x = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
 x_test = sc_x.transform(x_test)
+'''
